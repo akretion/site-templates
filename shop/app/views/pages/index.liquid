@@ -25,13 +25,22 @@ handle: home
   <div class="row">
     <h2 class="page-title">{% editable_text title, inline: true, rows: 1 %}Our featured products{% endeditable_text %}</h2>
 
-    {% editable_model 'products', hint: 'Only products with the featured attribute toggled on are displayed' %}
-      {% with_scope featured: true %}
-        {% for product in contents.products %}
-          {% include 'product' with product %}
-        {% endfor %}
-      {% endwith_scope %}
-    {% endeditable_model %}
+      <ul>
+      {% assign products_by_categ = ooor_model['product.template'] | group_by:"categ_id" %}
+      {% for categ in products_by_categ %}
+        <li>
+          <h3>{{ categ.name }}</h3>
+          <ul>
+            {% for product in categ.items %}
+              <li>
+                <a href="{% path_to product %}">{{ product.name }} - {{ product.list_price }} {{ product.currency_id._display_name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+      </ul>
+
   </div>
 </div>
 {% endblock %}

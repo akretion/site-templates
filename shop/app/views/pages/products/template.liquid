@@ -7,7 +7,7 @@ listed: false
 published: true
 
 # content type that this page is templatizing
-content_type: products
+content_type: ooor_entries
 ---
 {% extends layouts/default %}
 
@@ -16,7 +16,7 @@ content_type: products
   <div class="container main-content">
     <div class="row">
       <div class="col-md-6 product-image">
-        <img src="{{ product.picture.url | resize: '600x600#' | default: 'http://placehold.it/600x600' }}" class="img-responsive" alt="{{ product.name }}">
+        <img src="/web/image/product.product/{{product.associations.product_variant_ids[0]}}/image" class="img-responsive" alt="{{ product.name }}">
       </div>
       <div class="col-md-6 product-description">
         <h2>{{ product.name }}</h2>
@@ -24,19 +24,31 @@ content_type: products
           {{ product.description }}
         </div>
         <div class="price">
-          {{ product.price | money: unit: "$", format: "%u%n" }}
+          {{ product.list_price }} {{ product.currency_id._display_name }}
         </div>
-        <div class="add-to-cart">
-          <a href="#"
-              class="btn btn-lg btn-default snipcart-add-item"
-              data-item-id="{{ product._id }}"
-              data-item-name="{{ product.name }}"
-              data-item-price="{{ product.price }}"
-              data-item-weight="{{ product.weight }}"
-              data-item-url="{{ base_url }}{% path_to product %}"
-              data-item-description="{{ product.short_description }}">
-            <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Add to cart
-          </a>
+        <div>
+
+          <form action="/shop/cart/update" class="js_add_cart_variants" data-attribute_value_ids="{{product.associations.product_variant_ids | json}}" method="POST">
+                <!-- NOTE you can copy a valid token to test, but ultimately we need https://github.com/akretion/ooorest/issues/5 -->
+                <input name="csrf_token" value="bf188c7a470eb0471f7b0f4891894aae21b5cf04o1462515852" type="hidden">
+                <div class="js_product">
+                      <input class="product_id" name="product_id" value="{{product.associations.product_variant_ids[0]}}" type="hidden">
+
+                      <!-- TODO implement missing features here: variant selector, numer of item, offer... -->
+                <div class="css_quantity input-group oe_website_spinner" contenteditable="false">
+                    <a href="#" class="mb8 input-group-addon js_add_cart_json">
+                        <i class="fa fa-minus"></i>
+                    </a>
+                    <input class="form-control" data-min="1" name="add_qty" value="1" data-oe-id="680" data-oe-model="ir.ui.view" data-oe-field="arch" data-oe-xpath="/data/xpath/div/input[1]" type="text">
+                    <a href="#" class="mb8 input-group-addon float_left js_add_cart_json">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+
+                <button id="add_to_cart" class="btn btn-primary btn-lg mt8" type"submit">Add to Cart</button>
+                </div>
+            </form>
+
         </div>
       </div>
     </div>

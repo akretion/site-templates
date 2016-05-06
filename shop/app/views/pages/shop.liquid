@@ -13,7 +13,7 @@ position: 1
   <h2 class="page-title">{% editable_text title, inline: true, rows: 1 %}Our catalog of products{% endeditable_text %}</h2>
 
   {% editable_model 'products', hint: 'all products paginated by 8' %}
-    {% paginate contents.products by 8 %}
+    {% paginate ooor_model['product.template'] by 8 %}
     <div class="row">
       <div class="col-md-12">
         {% for product in paginate.collection %}

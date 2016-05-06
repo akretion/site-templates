@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'locomotivecms_wagon', '~> 2.1.0.rc3'
+gem 'locomotivecms_wagon', git: 'https://github.com/akretion/wagon.git', branch: 'gemspec-hack'
+gem 'locomotivecms_steam', git: 'https://github.com/locomotivecms/steam.git'
+
+gem 'ooor', git: 'https://github.com/akretion/ooor.git'
+gem 'erpify', git: 'https://github.com/akretion/erpify.git'
+gem 'exodoo', path: 'vendor/exodoo'
+
 
 # gem 'guard-livereload', '~> 2.5.1'
 

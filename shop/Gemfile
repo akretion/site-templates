@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'locomotivecms_wagon', git: 'https://github.com/akretion/wagon.git', branch: 'gemspec-hack'
-gem 'locomotivecms_steam', git: 'https://github.com/locomotivecms/steam.git'
 
 gem 'ooor', git: 'https://github.com/akretion/ooor.git'
-gem 'erpify', git: 'https://github.com/akretion/erpify.git'
+gem 'erpify', path: 'vendor/erpify'
 gem 'exodoo', path: 'vendor/exodoo'
 
 

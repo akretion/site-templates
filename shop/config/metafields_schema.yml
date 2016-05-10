@@ -6,7 +6,7 @@ ooor:
       type: string
     database:
       type: string
-    user:
+    username:
       type: string
     password:
       type: string

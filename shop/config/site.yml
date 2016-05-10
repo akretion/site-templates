@@ -66,4 +66,6 @@ metafields:
     api_key: "ZGRhMmU5NjItZDUzZS00ZjkwLTgxYWQtNzE5YmFhMGI0NzQwNjM1OTM1NjI2MTQ3MzgwMDAw"
   theme:
     main_color: "#3b81ae"
-
+  ooor:
+    username: 'demo'
+    password: 'demo'

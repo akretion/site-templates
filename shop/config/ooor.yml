@@ -1,6 +1,8 @@
 development:
   #url: http://128321-9-0-052da3.runbot9.odoo.com         #the OpenERP XML/RPC server
   #database: 128321-9-0-052da3-all               #the OpenERP database you want to connect to
+  #  url: http://151512-9-0-f558c0.runbot.odoo.com
+  #  database: 151512-9-0-f558c0-all
   url: http://odoo:8069
   database: db
   username: admin
@@ -18,4 +20,8 @@ development:
     "/web/image": http://odoo:8069/web/image
     "/web/content": http://odoo:8069/web/content
     "/shop/cart": http://odoo:8069/shop/cart
+    "/shop/checkout": http://odoo:8069/shop/checkout
+    "/shop/confirm_order": http://odoo:8069/shop/confirm_order
+    "/shop/payment": http://odoo:8069/shop/payment
+    "/shop/confirmation": http://odoo:8069/shop/confirmation
 

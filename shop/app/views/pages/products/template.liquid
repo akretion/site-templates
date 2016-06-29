@@ -27,10 +27,9 @@ content_type: ooor_entries
           {{ product.list_price }} {{ product.currency_id._display_name }}
         </div>
         <div>
-
           <form action="/shop/cart/update" class="js_add_cart_variants" data-attribute_value_ids="{{product.associations.product_variant_ids | json}}" method="POST">
                 <!-- NOTE you can copy a valid token to test, but ultimately we need https://github.com/akretion/ooorest/issues/5 -->
-                <input name="csrf_token" value="bf188c7a470eb0471f7b0f4891894aae21b5cf04o1462515852" type="hidden">
+                <input name="csrf_token" value="{{ session.csrf_token }}" type="hidden">
                 <div class="js_product">
                       <input class="product_id" name="product_id" value="{{product.associations.product_variant_ids[0]}}" type="hidden">
 

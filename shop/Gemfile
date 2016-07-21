@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'locomotivecms_wagon', git: 'https://github.com/akretion/wagon.git', branch: 'gemspec-hack'
+gem 'locomotivecms_wagon', git: 'https://github.com/locomotivecms/wagon.git'
 
 gem 'ooor', git: 'https://github.com/akretion/ooor.git'
 gem 'erpify', path: 'vendor/erpify'
-gem 'exodoo', path: 'vendor/exodoo'
 
 
 # gem 'guard-livereload', '~> 2.5.1'
@@ -26,4 +25,5 @@ group :misc do
   # Add your extra gems here
   # gem 'susy', require: 'susy'
   # gem 'bourbon', require: 'bourbon'
+  gem 'exodoo', path: 'vendor/exodoo', require: true
 end

@@ -1,22 +1,22 @@
 GIT
   remote: https://github.com/akretion/ooor.git
-  revision: de3755b564a256f64c53108b8cfcc11bc1179171
+  revision: 97124fdc86c199c1081cf9dd09e1e7060d6a26fd
   specs:
     ooor (2.3.0)
       activemodel (>= 3.2.0)
       faraday
 
 GIT
-  remote: https://github.com/akretion/wagon.git
-  revision: 2d4fbdb64d751e840cf7427378d91bcf23e6cdde
-  branch: gemspec-hack
+  remote: https://github.com/locomotivecms/wagon.git
+  revision: 50790c2b3942bd7af1e01fee5e8659589abe8e72
   specs:
-    locomotivecms_wagon (2.1.0)
+    locomotivecms_wagon (2.2.0.beta1)
       faker (~> 1.6)
+      haml (~> 4.0.7)
       listen (~> 3.0.4)
-      locomotivecms_coal (~> 1.1.0)
-      locomotivecms_common (~> 0.1.0)
-      locomotivecms_steam (~> 1.1.0)
+      locomotivecms_coal (~> 1.2.0)
+      locomotivecms_common (~> 0.2.0)
+      locomotivecms_steam (~> 1.2.0.beta)
       netrc (~> 0.10.3)
       rack-livereload (~> 0.3.16)
       rubyzip (~> 1.1.7)
@@ -36,17 +36,17 @@ PATH
   specs:
     exodoo (0.0.2)
       erpify
-      locomotivecms_steam (~> 1.1.0)
+      locomotivecms_steam (~> 1.2.0.beta)
       rack-reverse-proxy
 
 GEM
   remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    activemodel (4.2.5.2)
-      activesupport (= 4.2.5.2)
+    activemodel (4.2.7)
+      activesupport (= 4.2.7)
       builder (~> 3.1)
-    activesupport (4.2.5.2)
+    activesupport (4.2.7)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -58,12 +58,12 @@ GEM
       execjs
     builder (3.2.2)
     chronic (0.10.2)
-    chunky_png (1.3.5)
+    chunky_png (1.3.6)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    colorize (0.7.7)
+    colorize (0.8.1)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -83,15 +83,16 @@ GEM
       addressable (~> 2.3)
       multi_json (~> 1.0)
       rack (>= 1.3.0)
+    duktape (1.3.0.6)
     eventmachine (1.2.0.1)
-    execjs (2.6.0)
-    faker (1.6.3)
+    execjs (2.7.0)
+    faker (1.6.5)
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.10)
+    ffi (1.9.14)
     haml (4.0.7)
       tilt
     httparty (0.13.7)
@@ -102,55 +103,59 @@ GEM
     json (1.8.3)
     kramdown (1.10.0)
     libv8 (3.16.14.15)
-    listen (3.0.7)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
+    listen (3.0.8)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     locomotive_liquid (2.4.2)
     locomotivecms-liquid (4.0.0)
     locomotivecms-solid (4.0.1)
       locomotivecms-liquid (~> 4.0.0)
-    locomotivecms_coal (1.1.0)
-      activesupport (~> 4.2.5.2)
+    locomotivecms_coal (1.2.0)
+      activesupport (~> 4.2.6)
       faraday (~> 0.9.1)
       faraday_middleware (~> 0.10.0)
       httpclient (~> 2.7.1)
-    locomotivecms_common (0.1.0)
-      activesupport (~> 4.2.5.2)
+    locomotivecms_common (0.2.0)
+      activesupport (~> 4.2.6)
       attr_extras (~> 4.4.0)
       colorize
       stringex (~> 2.6.0)
     locomotivecms_solid (0.2.2)
       locomotive_liquid (~> 2.4.2)
-    locomotivecms_steam (1.1.0)
+    locomotivecms_steam (1.2.0.beta1)
       RedCloth (~> 4.2.9)
       autoprefixer-rails (~> 6.3.3.1)
       chronic (~> 0.10.2)
       coffee-script (~> 2.4.1)
       compass (~> 1.0.3)
       dragonfly (~> 1.0.12)
+      duktape (~> 1.3.0.6)
       haml (~> 4.0.6)
       httparty (~> 0.13.6)
       kramdown (~> 1.10.0)
       locomotivecms-solid (~> 4.0.1)
-      locomotivecms_common (~> 0.1.0)
+      locomotivecms_common (~> 0.2.0)
       mime-types (~> 2.6.1)
       mimetype-fu (~> 0.1.2)
       moneta (~> 0.8.0)
       morphine (~> 0.1.1)
       nokogiri (~> 1.6.7.2)
+      pony (~> 1.11)
       rack-cache (~> 1.6.1)
       rack-rewrite (~> 1.5.1)
       rack_csrf (~> 2.5.0)
       sanitize (~> 4.0.1)
       sass (~> 3.4.21)
       sprockets (~> 3.5.2)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
     mime-types (2.6.2)
     mimetype-fu (0.1.2)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    minitest (5.9.0)
     moneta (0.8.0)
     morphine (0.1.1)
-    multi_json (1.12.0)
+    multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     netrc (0.10.3)
@@ -158,12 +163,14 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     nokogumbo (1.4.7)
       nokogiri
+    pony (1.11)
+      mail (>= 2.0)
     rack (1.6.4)
     rack-cache (1.6.1)
       rack (>= 0.4)
     rack-livereload (0.3.16)
       rack
-    rack-proxy (0.5.17)
+    rack-proxy (0.6.0)
       rack
     rack-reverse-proxy (0.11.0)
       rack (>= 1.0.0)
@@ -184,7 +191,7 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    stringex (2.6.0)
+    stringex (2.6.1)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -194,7 +201,7 @@ GEM
       rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.3)
+    tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     yui-compressor (0.12.0)
@@ -211,4 +218,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   1.10.5
+   1.12.5

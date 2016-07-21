@@ -51,12 +51,11 @@ content_type: ooor_entries
         </div>
       </div>
     </div>
-  </div>
 
-  {% if product.related_products.size > 0 %}
+  {% if product.alternative_product_ids.size > 0 %}
     <div class="related-products">
       <h4>Related Products</h4>
-      {% paginate product.related_products by 4 %}
+      {% paginate product.alternative_product_ids by 4 %}
       <div class="row">
         <div class="col-md-12">
           {% for related_product in paginate.collection %}
@@ -75,4 +74,5 @@ content_type: ooor_entries
     </div>
   {% endif %}
 
+  </div>
 {% endblock %}

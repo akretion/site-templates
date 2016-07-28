@@ -1,0 +1,85 @@
+---
+title: Shop2
+slug: shop2
+position: 3
+listed: true
+published: true
+is_layout: false
+
+---
+
+
+{% extends layouts/default %}
+
+
+
+{% block content %}
+
+{{ 'algo.css' | stylesheet_tag }}
+
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css" />
+
+
+<div class="container main-content">
+
+
+    <aside>
+        <div id="clear-all"></div>
+        <section class="facet-wrapper">
+        {% comment %} 
+          <div class="facet-category-title" class="facet">Show results for</div>
+          <div id="categories"></div>
+           {% endcomment %}
+        </section>
+        <section class="facet-wrapper">
+          <div class="facet-category-title">Refine by</div>
+          {% comment %} 
+           <div id="brands" class="facet"></div>
+           <div class="facet-title">Ratings</div class="facet-title">
+           <div id="stars" class="facet"></div>
+          {% endcomment %}
+           <div id="colors" class="facet"()></div>
+          <div id="price" class="facet"></div>
+        </section>
+     
+      </aside>
+
+        <div class="content-wrapper">
+      <div class="results-wrapper">
+        <section id="results-topbar">
+          <div class="container-fluid">
+    <div class="content-wrapper">
+      <div class="input-group">
+          <span class="input-group-btn">
+          <button class="btn btn-default"><i class="fa fa-search"></i></button>
+          </span>
+          <input type="text" id="search-box"  />
+      </div>
+    </div>
+          <div class="sort-by">
+            <label>Sort by</label>
+            <div id="sort-by-container"></div>
+          </div>
+          <!-- <div id="stats" class="text-muted"></div> -->
+        </section>
+        <main id="hits-container"></main>
+        <div id="pagination-container"></section></div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+{% endblock %}
+

@@ -3,7 +3,8 @@
   var index = client.initIndex('algolia-product');
 
   var products = Hogan.compile(' <img src="/web/image/product.product/{{id}}/image" />'+'{{{_highlightResult.name.value}}}'+'</br>'+'{{{_highlightResult.description.value}}}');
-
+  var form = document.getElementById('form');
+  var submit = document.getElementById('submit');
 
   autocomplete('#search', {hint: false}, [
     {
@@ -18,7 +19,9 @@
     }
   }
   ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-    console.log(suggestion, dataset);
+       $( "form" ).on( "submit", function( event ) {
+      form.action = ("http://0.0.0.0:5333/products/" + suggestion.name);  
+    });
   });
 
 

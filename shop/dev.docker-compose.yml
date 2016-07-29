@@ -1,0 +1,15 @@
+networks:
+  default:
+    external:
+      name: akreshop_default
+services:
+  wagon:
+    extends:
+      file: docker-compose.yml
+      service: wagon
+    ports:
+    - 5333:3333
+    volumes:
+    - .:/workspace
+    - /home/carl/.voodoo/shared:/home/carl/.voodoo/shared
+version: '2'

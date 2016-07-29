@@ -67,5 +67,5 @@ metafields:
   theme:
     main_color: "#3b81ae"
   ooor:
-    username: 'demo'
-    password: 'demo'
+    username: 'admin'
+    password: 'admin'

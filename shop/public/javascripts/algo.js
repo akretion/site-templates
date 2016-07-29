@@ -11,9 +11,9 @@ var templates = '<article class="hit">' +
 
 
 var search = instantsearch({
-  appId: 'GXJ6XPNVUT',
-  apiKey: 'b271f5a0a74504bbeac802dc06d3059b',
-  indexName: 'algolia-product',
+  appId: 'YouAppId',
+  apiKey: 'YouApiKey',
+  indexName: 'YouIndexName',
   urlSync:    {
         useHash:    false,
         searchInputSelector: '#search-box'

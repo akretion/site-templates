@@ -1,6 +1,6 @@
 
-  var client = algoliasearch("GXJ6XPNVUT", "b271f5a0a74504bbeac802dc06d3059b");
-  var index = client.initIndex('algolia-product');
+  var client = algoliasearch("YouAppId", "YouApiKey");
+  var index = client.initIndex('YouIndexName');
 
   var products = Hogan.compile(' <img src="/web/image/product.product/{{id}}/image" />'+'{{{_highlightResult.name.value}}}'+'</br>'+'{{{_highlightResult.description.value}}}');
   var form = document.getElementById('form');
